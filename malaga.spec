@@ -1,10 +1,11 @@
 
 %define name	malaga
-%define version	7.9
-%define rel	2
+%define version	7.11
+%define rel	1
 
 %define major	7
 %define libname	%mklibname %name %major
+%define develname %mklibname %name -d
 
 Summary:	A grammar development environment for natural languages
 Name:		%name
@@ -41,14 +42,15 @@ modelling of morphology and syntax grammars.
 This package contains the library needed to run programs dynamically
 linked with Malaga.
 
-%package -n %libname-devel
+%package -n %develname
 Summary:	Headers and static libraries for Malaga development
 Group:		Development/C
 Requires:	%libname = %version
 Provides:	lib%name-devel = %version-%release
 Provides:	%name-devel = %version-%release
+Obsoletes:	%{_lib}malaga7-devel
 
-%description -n %libname-devel
+%description -n %develname
 Malaga is a software package for the development and application of
 grammars that are used for the analysis of words and sentences of
 natural languages. It contains a programming language for the
@@ -92,7 +94,7 @@ rm -rf %{buildroot}
 %doc README.txt
 %{_libdir}/lib%{name}.so.%{major}*
 
-%files -n %libname-devel
+%files -n %develname
 %doc README.txt
 %{_libdir}/lib%{name}.a
 %{_libdir}/lib%{name}.la
