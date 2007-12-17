@@ -15,7 +15,6 @@ License:	GPL
 Group:		Text tools
 URL:		http://home.arcor.de/bjoern-beutel/malaga/
 Source:		http://home.arcor.de/bjoern-beutel/malaga/%name-%version.tar.bz2
-BuildRoot:	%{_tmppath}/%{name}-root
 BuildRequires:	readline-devel
 BuildRequires:	gtk+2-devel
 BuildRequires:	glib2-devel
