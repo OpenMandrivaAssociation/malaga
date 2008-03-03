@@ -1,6 +1,6 @@
 
 %define name	malaga
-%define version	7.11
+%define version	7.12
 %define rel	1
 
 %define major	7
@@ -14,11 +14,12 @@ Release:	%mkrel %rel
 License:	GPL
 Group:		Text tools
 URL:		http://home.arcor.de/bjoern-beutel/malaga/
-Source:		http://home.arcor.de/bjoern-beutel/malaga/%name-%version.tar.bz2
+Source:		http://home.arcor.de/bjoern-beutel/malaga/%name-%version.tgz
 BuildRoot:	%{_tmppath}/%{name}-root
 BuildRequires:	readline-devel
 BuildRequires:	gtk+2-devel
 BuildRequires:	glib2-devel
+BuildRequires:	chrpath
 Requires(post):	info-install
 Requires(preun): info-install
 
@@ -63,12 +64,13 @@ programmers will need to develop applications which will use Malaga.
 %setup -q
 
 %build
-%configure2_5x
+%configure2_5x --disable-rpath
 %make
 
 %install
 rm -rf %{buildroot}
 %makeinstall INSTALL_INFO=true
+chrpath -d %{buildroot}%{_bindir}/* %{buildroot}%{_libdir}/*.so
 
 %clean
 rm -rf %{buildroot}
