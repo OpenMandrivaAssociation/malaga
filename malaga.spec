@@ -75,8 +75,12 @@ chrpath -d %{buildroot}%{_bindir}/* %{buildroot}%{_libdir}/*.so
 %clean
 rm -rf %{buildroot}
 
+%if %mdkversion < 200900
 %post -n %libname -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libname -p /sbin/ldconfig
+%endif
 
 %post
 %_install_info %name
