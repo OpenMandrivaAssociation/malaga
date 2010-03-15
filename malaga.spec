@@ -1,7 +1,7 @@
 
 %define name	malaga
 %define version	7.12
-%define rel	3
+%define rel	4
 
 %define major	7
 %define libname	%mklibname %name %major
