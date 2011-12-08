@@ -62,7 +62,7 @@ programmers will need to develop applications which will use Malaga.
 	--disable-rpath \
 	--disable-static
 
-%make
+%make LIBS='-lm'
 
 %install
 rm -rf %{buildroot}
