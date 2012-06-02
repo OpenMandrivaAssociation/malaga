@@ -1,12 +1,12 @@
 %define major	7
-%define libname	%mklibname %{name} %major
-%define develname %mklibname %{name} -d
+%define libname		%mklibname %{name} %{major}
+%define develname 	%mklibname %{name} -d
 
 Summary:	A grammar development environment for natural languages
 Name:		malaga
 Version:	7.12
-Release:	7
-License:	GPL
+Release:	8
+License:	GPLv2+
 Group:		Text tools
 URL:		http://home.arcor.de/bjoern-beutel/malaga/
 Source:		http://home.arcor.de/bjoern-beutel/malaga/%{name}-%{version}.tgz
@@ -15,8 +15,6 @@ BuildRequires:	readline-devel
 BuildRequires:	gtk+2-devel
 BuildRequires:	glib2-devel
 BuildRequires:	chrpath
-Requires(post):	info-install
-Requires(preun): info-install
 
 %description
 Malaga is a software package for the development and application of
@@ -51,7 +49,7 @@ grammars that are used for the analysis of words and sentences of
 natural languages. It contains a programming language for the
 modelling of morphology and syntax grammars.
 
-This package contains the headers and static library that
+This package contains the headers and development symlink to library that
 programmers will need to develop applications which will use Malaga.
 
 %prep
@@ -67,14 +65,7 @@ programmers will need to develop applications which will use Malaga.
 %install
 rm -rf %{buildroot}
 %makeinstall INSTALL_INFO=true
-find %{buildroot} -name "*.la" -delete
 chrpath -d %{buildroot}%{_bindir}/* %{buildroot}%{_libdir}/*.so
-
-%post
-%_install_info %{name}
-
-%preun
-%_remove_install_info %{name}
 
 %files
 %doc CHANGES.txt README.txt
