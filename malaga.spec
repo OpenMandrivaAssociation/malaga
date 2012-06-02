@@ -10,6 +10,12 @@ License:	GPLv2+
 Group:		Text tools
 URL:		http://home.arcor.de/bjoern-beutel/malaga/
 Source:		http://home.arcor.de/bjoern-beutel/malaga/%{name}-%{version}.tgz
+# Fix map_file symbol conflict with samba. Upstream can be considered
+# inactive but as libvoikko >= 2.2 doesn't use libmalaga anymore, these kind
+# of problems won't probably come up.
+Patch0:		malaga-rename-map_file.diff
+
+Patch1:		malaga-malshow-lm.patch
 
 BuildRequires:	readline-devel
 BuildRequires:	gtk+2-devel
@@ -54,13 +60,15 @@ programmers will need to develop applications which will use Malaga.
 
 %prep
 %setup -q
+%patch0 -p1
+%patch1 -p1
 
 %build
 %configure2_5x \
 	--disable-rpath \
 	--disable-static
 
-%make LIBS='-lm'
+%make
 
 %install
 rm -rf %{buildroot}
