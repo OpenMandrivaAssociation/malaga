@@ -89,3 +89,57 @@ chrpath -d %{buildroot}%{_bindir}/* %{buildroot}%{_libdir}/*.so
 %{_libdir}/lib%{name}.so
 %{_includedir}/malaga.h
 
+
+
+%changelog
+* Wed May 04 2011 Oden Eriksson <oeriksson@mandriva.com> 7.12-6mdv2011.0
++ Revision: 666362
+- mass rebuild
+
+* Fri Dec 03 2010 Oden Eriksson <oeriksson@mandriva.com> 7.12-5mdv2011.0
++ Revision: 606624
+- rebuild
+
+* Mon Mar 15 2010 Oden Eriksson <oeriksson@mandriva.com> 7.12-4mdv2010.1
++ Revision: 520166
+- rebuilt for 2010.1
+
+* Thu Sep 03 2009 Christophe Fergeau <cfergeau@mandriva.com> 7.12-3mdv2010.0
++ Revision: 426070
+- rebuild
+
+* Wed Feb 25 2009 Thierry Vignaud <tv@mandriva.org> 7.12-2mdv2009.1
++ Revision: 344818
+- rebuild for new libreadline
+
+* Mon Jun 09 2008 Pixel <pixel@mandriva.com> 7.12-1mdv2009.0
++ Revision: 217193
+- do not call ldconfig in %%post/%%postun, it is now handled by filetriggers
+
+* Mon Mar 03 2008 Anssi Hannula <anssi@mandriva.org> 7.12-1mdv2008.1
++ Revision: 178193
+- new version
+- drop rpaths
+
+* Thu Jan 03 2008 Olivier Blin <oblin@mandriva.com> 7.11-1mdv2008.1
++ Revision: 140944
+- restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Mon Jul 09 2007 Anssi Hannula <anssi@mandriva.org> 7.11-1mdv2008.0
++ Revision: 50739
+- 7.11
+- apply new devel policy
+
+
+* Sun Oct 29 2006 Anssi Hannula <anssi@mandriva.org> 7.9-2mdv2007.0
++ Revision: 73660
+- add man pages
+- 7.9
+- Import malaga
+
+* Sun Aug 13 2006 Anssi Hannula <anssi@mandriva.org> 7.5-1mdv2007.0
+- initial Mandriva release
+
