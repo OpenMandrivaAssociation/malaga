@@ -1,6 +1,7 @@
 %define major	7
 %define libname		%mklibname %{name} %{major}
 %define develname 	%mklibname %{name} -d
+%define debug_package %{nil}
 
 Summary:	A grammar development environment for natural languages
 Name:		malaga
