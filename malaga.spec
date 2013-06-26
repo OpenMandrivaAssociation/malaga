@@ -6,7 +6,7 @@
 Summary:	A grammar development environment for natural languages
 Name:		malaga
 Version:	7.12
-Release:	8
+Release:	9
 License:	GPLv2+
 Group:		Text tools
 URL:		http://home.arcor.de/bjoern-beutel/malaga/
@@ -19,8 +19,8 @@ Patch0:		malaga-rename-map_file.diff
 Patch1:		malaga-malshow-lm.patch
 
 BuildRequires:	readline-devel
-BuildRequires:	gtk+2-devel
-BuildRequires:	glib2-devel
+BuildRequires:	pkgconfig(gtk+-2.0)
+BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	chrpath
 
 %description
