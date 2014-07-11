@@ -6,7 +6,7 @@
 Summary:	A grammar development environment for natural languages
 Name:		malaga
 Version:	7.12
-Release:	14
+Release:	15
 License:	GPLv2+
 Group:		Text tools
 Url:		http://home.arcor.de/bjoern-beutel/malaga/
