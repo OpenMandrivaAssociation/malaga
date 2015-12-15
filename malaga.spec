@@ -3,6 +3,8 @@
 %define libname	%mklibname %{name} %{major}
 %define devname	%mklibname %{name} -d
 
+%define _disable_lto 1
+
 Summary:	A grammar development environment for natural languages
 Name:		malaga
 Version:	7.12
