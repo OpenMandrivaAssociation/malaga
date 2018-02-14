@@ -8,7 +8,7 @@
 Summary:	A grammar development environment for natural languages
 Name:		malaga
 Version:	7.12
-Release:	18
+Release:	19
 License:	GPLv2+
 Group:		Text tools
 Url:		http://home.arcor.de/bjoern-beutel/malaga/
@@ -54,9 +54,7 @@ programmers will need to develop applications which will use Malaga.
 %apply_patches
 
 %build
-%configure2_5x \
-	--disable-static
-
+%configure
 %make
 
 %install
@@ -76,4 +74,3 @@ chrpath -d %{buildroot}%{_bindir}/* %{buildroot}%{_libdir}/*.so
 %files -n %{devname}
 %{_libdir}/lib%{name}.so
 %{_includedir}/malaga.h
-
