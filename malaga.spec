@@ -51,7 +51,7 @@ programmers will need to develop applications which will use Malaga.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 %configure
