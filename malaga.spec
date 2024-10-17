@@ -11,7 +11,7 @@ Version:	7.12
 Release:	21
 License:	GPLv2+
 Group:		Text tools
-Url:		http://home.arcor.de/bjoern-beutel/malaga/
+Url:		https://home.arcor.de/bjoern-beutel/malaga/
 Source0:	http://home.arcor.de/bjoern-beutel/malaga/%{name}-%{version}.tgz
 # Fix map_file symbol conflict with samba. Upstream can be considered
 # inactive but as libvoikko >= 2.2 doesn't use libmalaga anymore, these kind
